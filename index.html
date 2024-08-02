@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- PAGE TITLE       -->
+    <title>Tarot-Game- 0.0.1</title>
+<!-- EXTERNAL SCRIPTS -->
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>   
+</head>
+<!-- MAIN HTML        -->
+<body>
+    <canvas id="main" width="256" height="144"></canvas>
+    <br>
+    ----------------------------------
+<!--Javascript        -->
+    <script>
+        var canvas = document.getElementById("main");
+        var main = canvas.getContext("2d");
+        
+        //COLORS
+        const grn = "green"
+        const drkGrn = "darkgreen"
+        const ylw = "yellow"
+        const blk = "black"
+        const drkYlw ="orange"
+        const drkErYlw = "darkorange"
+
+        function filL(ctx, x1, y1, x2, y2, coloR){
+            x1 = x1 || 0;
+            y1 = y1 || 0;
+
+            x2 = x2 || 1;
+            y2 = y2 || 1;
+
+            coloR = coloR || "black";
+
+            ctx.beginPath();
+            ctx.fillStyle = coloR;
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x1 + x2, y1);
+            ctx.lineTo(x1 + x2, y1 + y2);
+            ctx.lineTo(x1, y1 + y2)
+            ctx.lineTo(x1, y1)
+            ctx.fill();
+
+        }
+
+        function fillTri(ctx, x1, y1, x2, y2, z1, coloR){
+            x1 = x1 || 0;
+            y1 = y1 || 0;
+
+            x2 = x2 || 2;
+            y2 = y2 || 2;
+            z1 = z1 || 0;
+
+
+            coloR = coloR || "black";
+
+            ctx.beginPath();
+            ctx.fillStyle = coloR;
+ 
+
+            if(z1 == 0) {
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x1 + x2, y1 + y2);
+                ctx.lineTo(x1 - x2, y1 + y2);
+                ctx.lineTo(x1, y1);
+                ctx.fill();
+            }
+
+            if(z1 == 1) {
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x1 - x2, y1 - y2);
+                ctx.lineTo(x1 + x2, y1 - y2);
+                ctx.lineTo(x1, y1);
+                ctx.fill();  
+            }
+
+            if(z1 == 2) {
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x1 - x2, y1 - y2);
+                ctx.lineTo(x1 - x2, y1 + y2);
+                ctx.lineTo(x1, y1);
+                ctx.fill();  
+            }
+
+            if(z1 == 3) {
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x1 + x2, y1 + y2);
+                ctx.lineTo(x1 + x2, y1 - y2);
+                ctx.lineTo(x1, y1);
+                ctx.fill();  
+            }
+        
+
+        }
+
+        filL(main, 0, 0, 256, 144, grn)
+        filL(main, 10, 10, 243, 131, drkGrn)
+
+        
+        
+
+        filL(main, 248, 10, 3, 129, drkErYlw)
+        filL(main, 10, 135, 240, 4, drkYlw)
+        fillTri(main, 10, 139, 5, -4, 0, drkYlw)
+        fillTri(main, 248, 5, -4, 5, 0, drkErYlw)
+        fillTri(main, 246, 134, 5, -4, 3, drkErYlw)
+
+        
+
+        filL(main, 5, 5, 243, 130, ylw)
+
+    </script>
+
+
+
+
+</body>
+</html>
