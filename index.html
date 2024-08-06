@@ -7,7 +7,8 @@
     <title>Tarot-Game- 0.0.1</title>
 <!-- EXTERNAL SCRIPTS -->
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>   
+    <script src="main.js" type="module"></script>   
+
 </head>
 <!-- MAIN HTML        -->
 <body>
@@ -16,95 +17,8 @@
     ----------------------------------
 <!--Javascript        -->
     <script>
-        var canvas = document.getElementById("main");
-        var main = canvas.getContext("2d");
-        
-        //COLORS
-        const grn = "green"
-        const drkGrn = "darkgreen"
-        const ylw = "grey"
-        const blk = "black"
-        const drkYlw ="darkgrey"
-        const drkErYlw = "white"
-
-        const c0 = "#000000"
-        const c1 = "#372d30"
-        const c2 = "#553b3f"
-        const c3 = "#764f4f"
-        const c4 = "#a06b61"
-        const c5 = "#cfad9f"
-        const c6 = "#fbd99b"
-        const c7 = "#f1d56c"
-        const c8 = "#d5b14f"
-        const c9 = "#b38c31"
-
-        const c10 = "#785c25"
-        const c11 = "#513916"
-        const c12 = "#371c1a"
-        const c13 = "#512b25"
-        const c14 = "#723d32"
-        const c15 = "#90553e"
-        const c16 = "#b16b4e"
-        const c17 = "#cc825d"
-        const c18 = "#eba973"
-        const c19 = "#dd7261"
-
-        const c20 = "#bb4f4e"
-        const c21 = "#9a3846"
-        const c22 = "#582432"
-        const c23 = "#212020"
-        const c24 = "#343435"
-        const c25 = "#474545"
-        const c26 = "#605e5c"
-        const c27 = "#888c8e"
-        const c28 = "#abafa9"
-        const c29 = "#d3d3d3"
-
-        const c30 = "#cce37b"
-        const c31 = "#9bc15d"
-        const c32 = "#6ea24f"
-        const c33 = "#437c4b"
-        const c34 = "#1f2c37"
-        const c35 = "#325160"
-        const c36 = "#4189a0"
-        const c37 = "#73c0c9"
-        const c38 = "#a7dfd8"
-        const c39 = "#5580c5"
-
-        const c40 = "#4a5bb1"
-        const c41 = "#3d3670"
-        const c42 = "#262043"
-        const c43 = "#67396a"
-        const c44 = "#a24f9b"
-        const c45 = "#cf81be"
-        const c46 = "#e9b2dc"
-        const c47 = "#ffffff"
 
 
-
-
-
-
-
-        function filL(ctx, x1, y1, x2, y2, coloR){
-            x1 = x1 || 0;
-            y1 = y1 || 0;
-
-            x2 = x2 || 1;
-            y2 = y2 || 1;
-
-            coloR = coloR || "black";
-
-            ctx.beginPath();
-            ctx.fillStyle = coloR;
-            ctx.moveTo(x1, y1);
-            ctx.lineTo(x1 + x2, y1);
-            ctx.lineTo(x1 + x2, y1 + y2);
-            ctx.lineTo(x1, y1 + y2)
-            ctx.lineTo(x1, y1)
-            ctx.fill();
-
-        }
 
         function fillTri(ctx, x1, y1, x2, y2, z1, coloR){
             x1 = x1 || 0;
@@ -167,63 +81,6 @@
 
         filL(main, 5, 5, 243, 130, ylw)
 
-        //pallatte first line
-        filL(main, 20, 20, 20, 20, c0)
-        filL(main, 40, 20, 20, 20, c1)
-        filL(main, 60, 20, 20, 20, c2)
-        filL(main, 80, 20, 20, 20, c3)
-        filL(main, 100, 20, 20, 20, c4)
-        filL(main, 120, 20, 20, 20, c5)
-        filL(main, 140, 20, 20, 20, c6)
-        filL(main, 160, 20, 20, 20, c7)
-        filL(main, 180, 20, 20, 20, c8)
-        filL(main, 200, 20, 20, 20, c9)
-        
-        //pallatte second line
-        filL(main, 20, 40, 20, 20, c10)
-        filL(main, 40, 40, 20, 20, c11)
-        filL(main, 60, 40, 20, 20, c12)
-        filL(main, 80, 40, 20, 20, c13)
-        filL(main, 100, 40, 20, 20, c14)
-        filL(main, 120, 40, 20, 20, c15)
-        filL(main, 140, 40, 20, 20, c16)
-        filL(main, 160, 40, 20, 20, c17)
-        filL(main, 180, 40, 20, 20, c18)
-        filL(main, 200, 40, 20, 20, c19)
-        
-        //pallatte third line
-        filL(main, 20, 60, 20, 20, c20)
-        filL(main, 40, 60, 20, 20, c21)
-        filL(main, 60, 60, 20, 20, c22)
-        filL(main, 80, 60, 20, 20, c23)
-        filL(main, 100, 60, 20, 20, c24)
-        filL(main, 120, 60, 20, 20, c25)
-        filL(main, 140, 60, 20, 20, c26)
-        filL(main, 160, 60, 20, 20, c27)
-        filL(main, 180, 60, 20, 20, c28)
-        filL(main, 200, 60, 20, 20, c29)
-
-        //pallatte fourth line
-        filL(main, 20, 80, 20, 20, c30)
-        filL(main, 40, 80, 20, 20, c31)
-        filL(main, 60, 80, 20, 20, c32)
-        filL(main, 80, 80, 20, 20, c33)
-        filL(main, 100, 80, 20, 20, c34)
-        filL(main, 120, 80, 20, 20, c35)
-        filL(main, 140, 80, 20, 20, c36)
-        filL(main, 160, 80, 20, 20, c37)
-        filL(main, 180, 80, 20, 20, c38)
-        filL(main, 200, 80, 20, 20, c39)
-        
-        //pallatte fifth line
-        filL(main, 20, 100, 20, 20, c40)
-        filL(main, 40, 100, 20, 20, c41)
-        filL(main, 60, 100, 20, 20, c42)
-        filL(main, 80, 100, 20, 20, c43)
-        filL(main, 100, 100, 20, 20, c44)
-        filL(main, 120, 100, 20, 20, c45)
-        filL(main, 140, 100, 20, 20, c46)
-        filL(main, 160, 100, 20, 20, c47)
     </script>
 
 
