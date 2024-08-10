@@ -1,65 +1,122 @@
-export {
-    spritePalette,
-};
+import * as clr from "./colors.js"
+import * as drw from "./pixel.js"
 
 
-function spritePalette(ctx){
+
+
+export function back(ctx, x1, y1){
+    drw.pBox(ctx, x1 + 3, y1 + 3, 40, 50)
+    drw.pBox(ctx, x1 + 5, y1 + 1, 36 )
+    drw.pBox(ctx, x1 + 5, y1 + 50, 36 )
+}
+
+//ace
+export function ace(ctx, x1, y1){
+    drw.pBox(ctx, x1 + 3, y1 + 3, 40, 50)
+    drw.pBox(ctx, x1 + 5, y1 + 1, 36 )
+    drw.pBox(ctx, x1 + 5, y1 + 50, 36 )
+
+    drw.pBox(ctx, 5 + x1, 10 + y1, 5, 20, clr.c09)
+    drw.pBox(ctx, 10 + x1, 5 + y1, 0, 0, clr.c09)
+    drw.pBox(ctx, 15 + x1, 10 + y1, 5, 20, clr.c09)
+    drw.pBox(ctx, 10 + x1, 15 + y1, 0, 0, clr.c09)
+    drw.tri(ctx, 15 + x1, 5 + y1, 5, 5, clr.c09)
+    drw.tri(ctx, 10 + x1, 5 + y1, -5, 5, clr.c09)
+}
+
+
+export function two(ctx, x1, y1){
+    drw.pBox(ctx, x1 + 3, y1 + 3, 40, 50)
+    drw.pBox(ctx, x1 + 5, y1 + 1, 36 )
+    drw.pBox(ctx, x1 + 5, y1 + 50, 36 )
+    
+    drw.pBox(ctx, x1 + 5, y1 + 5, 10, 0, clr.c09)
+    drw.pBox(ctx, x1 + 10, y1 + 25, 10, 0, clr.c09)
+    drw.pLine(ctx, x1 + 5, y1 + 20, 5, 1, 3, clr.c09 )
+    drw.tri(ctx, x1+15, y1+ 5, 5, 5, clr.c09)
+    drw.pBox(ctx, x1+10, y1+ 30, -5, -5, clr.c09)
+    drw.tri(ctx, x1+15, y1+ 10, -5, 5, clr.c09)
+    drw.tri(ctx, x1+15, y1+ 20, 5, -5, clr.c09)
+    drw.tri(ctx, x1+10, y1+ 15, -5, 5, clr.c09)
+    drw.tri(ctx, x1+10, y1+ 25, 5, -5, clr.c09)
+}
+
+export function three(ctx, x1, y1){
+    drw.pBox(ctx, x1 + 3, y1 + 3, 40, 50)
+    drw.pBox(ctx, x1 + 5, y1 + 1, 36 )
+    drw.pBox(ctx, x1 + 5, y1 + 50, 36 )
+
+    drw.pBox(ctx, 5 + x1, 5 + y1, 10, 5, clr.c09)
+    drw.pBox(ctx, 5 + x1, 15 + y1, 10, 5, clr.c09)
+    drw.pBox(ctx, 5 + x1, 25 + y1, 10, 5, clr.c09)
+    drw.pBox(ctx, 15 + x1, 20 + y1, 5, 5, clr.c09)
+    drw.pBox(ctx, 15 + x1, 10 + y1, 5, 5, clr.c09)
+
+    drw.tri(ctx, x1+15, y1+ 5, 5, 5, clr.c09)
+    drw.tri(ctx, x1+15, y1+ 30, 5, -5, clr.c09)
+    //inverse tri
+    drw.tri(ctx, x1+15, y1+ 17.5, 5, -2.5, clr.c09)
+    drw.tri(ctx, x1+15, y1+ 17.5, 5, 2.5, clr.c09)
+}
+//
+//
+export function palette(ctx, x1, y1){
 
     //palette first line
-    drawPixel(ctx, 20, 20, 20, 20, c0)
-    drawPixel(ctx, 40, 20, 20, 20, c1)
-    drawPixel(ctx, 60, 20, 20, 20, c2)
-    drawPixel(ctx, 80, 20, 20, 20, c3)
-    drawPixel(ctx, 100, 20, 20, 20, c4)
-    drawPixel(ctx, 120, 20, 20, 20, c5)
-    drawPixel(ctx, 140, 20, 20, 20, c6)
-    drawPixel(ctx, 160, 20, 20, 20, c7)
-    drawPixel(ctx, 180, 20, 20, 20, c8)
-    drawPixel(ctx, 200, 20, 20, 20, c9)
+    drw.pBox(ctx, 20 + x1, 20 + y1, 20, 20, clr.c00)
+    drw.pBox(ctx, 40 + x1, 20 + y1, 20, 20, clr.c01)
+    drw.pBox(ctx, 60 + x1, 20 + y1, 20, 20, clr.c02)
+    drw.pBox(ctx, 80 + x1, 20 + y1, 20, 20, clr.c03)
+    drw.pBox(ctx, 100 + x1, 20 + y1, 20, 20, clr.c04)
+    drw.pBox(ctx, 120 + x1, 20 + y1, 20, 20, clr.c05)
+    drw.pBox(ctx, 140 + x1, 20 + y1, 20, 20, clr.c06)
+    drw.pBox(ctx, 160 + x1, 20 + y1, 20, 20, clr.c07)
+    drw.pBox(ctx, 180 + x1, 20 + y1, 20, 20, clr.c08)
+    drw.pBox(ctx, 200 + x1, 20 + y1, 20, 20, clr.c09)
     
     //palette second line
-    drawPixel(ctx, 20, 40, 20, 20, c10)
-    drawPixel(ctx, 40, 40, 20, 20, c11)
-    drawPixel(ctx, 60, 40, 20, 20, c12)
-    drawPixel(ctx, 80, 40, 20, 20, c13)
-    drawPixel(ctx, 100, 40, 20, 20, c14)
-    drawPixel(ctx, 120, 40, 20, 20, c15)
-    drawPixel(ctx, 140, 40, 20, 20, c16)
-    drawPixel(ctx, 160, 40, 20, 20, c17)
-    drawPixel(ctx, 180, 40, 20, 20, c18)
-    drawPixel(ctx, 200, 40, 20, 20, c19)
+    drw.pBox(ctx, 20 + x1, 40 + y1, 20, 20, clr.c10)
+    drw.pBox(ctx, 40 + x1, 40 + y1, 20, 20, clr.c11)
+    drw.pBox(ctx, 60 + x1, 40 + y1, 20, 20, clr.c12)
+    drw.pBox(ctx, 80 + x1, 40 + y1, 20, 20, clr.c13)
+    drw.pBox(ctx, 100 + x1, 40 + y1, 20, 20, clr.c14)
+    drw.pBox(ctx, 120 + x1, 40 + y1, 20, 20, clr.c15)
+    drw.pBox(ctx, 140 + x1, 40 + y1, 20, 20, clr.c16)
+    drw.pBox(ctx, 160 + x1, 40 + y1, 20, 20, clr.c17)
+    drw.pBox(ctx, 180 + x1, 40 + y1, 20, 20, clr.c18)
+    drw.pBox(ctx, 200 + x1, 40 + y1, 20, 20, clr.c19)
     
     //palette third line
-    drawPixel(ctx, 20, 60, 20, 20, c20)
-    drawPixel(ctx, 40, 60, 20, 20, c21)
-    drawPixel(ctx, 60, 60, 20, 20, c22)
-    drawPixel(ctx, 80, 60, 20, 20, c23)
-    drawPixel(ctx, 100, 60, 20, 20, c24)
-    drawPixel(ctx, 120, 60, 20, 20, c25)
-    drawPixel(ctx, 140, 60, 20, 20, c26)
-    drawPixel(ctx, 160, 60, 20, 20, c27)
-    drawPixel(ctx, 180, 60, 20, 20, c28)
-    drawPixel(ctx, 200, 60, 20, 20, c29)
+    drw.pBox(ctx, 20 + x1, 60 + y1, 20, 20, clr.c20)
+    drw.pBox(ctx, 40 + x1, 60 + y1, 20, 20, clr.c21)
+    drw.pBox(ctx, 60 + x1, 60 + y1, 20, 20, clr.c22)
+    drw.pBox(ctx, 80 + x1, 60 + y1, 20, 20, clr.c23)
+    drw.pBox(ctx, 100 + x1, 60 + y1, 20, 20, clr.c24)
+    drw.pBox(ctx, 120 + x1, 60 + y1, 20, 20, clr.c25)
+    drw.pBox(ctx, 140 + x1, 60 + y1, 20, 20, clr.c26)
+    drw.pBox(ctx, 160 + x1, 60 + y1, 20, 20, clr.c27)
+    drw.pBox(ctx, 180 + x1, 60 + y1, 20, 20, clr.c28)
+    drw.pBox(ctx, 200 + x1, 60 + y1, 20, 20, clr.c29)
 
     //pallatte fourth line
-    drawPixel(ctx, 20, 80, 20, 20, c30)
-    drawPixel(ctx, 40, 80, 20, 20, c31)
-    drawPixel(ctx, 60, 80, 20, 20, c32)
-    drawPixel(ctx, 80, 80, 20, 20, c33)
-    drawPixel(ctx, 100, 80, 20, 20, c34)
-    drawPixel(ctx, 120, 80, 20, 20, c35)
-    drawPixel(ctx, 140, 80, 20, 20, c36)
-    drawPixel(ctx, 160, 80, 20, 20, c37)
-    drawPixel(ctx, 180, 80, 20, 20, c38)
-    drawPixel(ctx, 200, 80, 20, 20, c39)
+    drw.pBox(ctx, 20 + x1, 80 + y1, 20, 20, clr.c30)
+    drw.pBox(ctx, 40 + x1, 80 + y1, 20, 20, clr.c31)
+    drw.pBox(ctx, 60 + x1, 80 + y1, 20, 20, clr.c32)
+    drw.pBox(ctx, 80 + x1, 80 + y1, 20, 20, clr.c33)
+    drw.pBox(ctx, 100 + x1, 80 + y1, 20, 20, clr.c34)
+    drw.pBox(ctx, 120 + x1, 80 + y1, 20, 20, clr.c35)
+    drw.pBox(ctx, 140 + x1, 80 + y1, 20, 20, clr.c36)
+    drw.pBox(ctx, 160 + x1, 80 + y1, 20, 20, clr.c37)
+    drw.pBox(ctx, 180 + x1, 80 + y1, 20, 20, clr.c38)
+    drw.pBox(ctx, 200 + x1, 80 + y1, 20, 20, clr.c39)
     
     //pallatte fifth line
-    drawPixel(ctx, 20, 100, 20, 20, c40)
-    drawPixel(ctx, 40, 100, 20, 20, c41)
-    drawPixel(ctx, 60, 100, 20, 20, c42)
-    drawPixel(ctx, 80, 100, 20, 20, c43)
-    drawPixel(ctx, 100, 100, 20, 20, c44)
-    drawPixel(ctx, 120, 100, 20, 20, c45)
-    drawPixel(ctx, 140, 100, 20, 20, c46)
-    drawPixel(ctx, 160, 100, 20, 20, c47)
+    drw.pBox(ctx, 20 + x1, 100 + y1, 20, 20, clr.c40)
+    drw.pBox(ctx, 40 + x1, 100 + y1, 20, 20, clr.c41)
+    drw.pBox(ctx, 60 + x1, 100 + y1, 20, 20, clr.c42)
+    drw.pBox(ctx, 80 + x1, 100 + y1, 20, 20, clr.c43)
+    drw.pBox(ctx, 100 + x1, 100 + y1, 20, 20, clr.c44)
+    drw.pBox(ctx, 120 + x1, 100 + y1, 20, 20, clr.c45)
+    drw.pBox(ctx, 140 + x1, 100 + y1, 20, 20, clr.c46)
+    drw.pBox(ctx, 160 + x1, 100 + y1, 20, 20, clr.c47)
 }

@@ -1,42 +1,38 @@
-import {
+import * as drw from "./drawJS/pixel.js"
+import * as clr from "./drawJS/colors.js"
+import * as spt from "./drawJS/sprites.js"
 
-    drawPixel,
-    drawLine,
-
-} from "./drawJS/pixel.js"
-
-
-import {
-    
-    c0, c1, c2, c3, c4, c5, c6, c7, c8, c9,
-    c10, c11, c12, c13, c14, c15, c16, c17, c18, c19,
-    c20, c21, c22, c23, c24, c25, c26, c27, c28, c29,
-    c30, c31, c32, c33, c34, c35, c36, c37, c38, c39,
-    c40, c41, c42, c43, c44, c45, c46, c47
-
-} from "./drawJS/colors.js"
-
-import {
-
-    spritePalette,
-    
-} from "./drawJS/sprites.js"
-
+//MAIN CANVAS
 var canvas = document.getElementById("main");
 var main = canvas.getContext("2d");
 
+//DEBUG
+var canvasTest = document.getElementById("test");
+var test = canvasTest.getContext("2d");
+
+//canvas.width = window.innerWidth - 30
+canvasTest.height = window.innerHeight - 220
+
+//BG
+drw.pBox(main, 0, 0, 500, 500, clr.c03)
+drw.pBox(test, 0, 0, 500, 500, clr.c23)
+//PALETTE
+spt.palette(test, 0, 200)
+
+
+spt.ace(main, 5, 5)
+spt.two(main, 55, 5)
+spt.three(main, 105, 5)
+spt.back(main, 5, 65)
+spt.back(main, 55, 65)
+spt.back(main, 105, 65)
+
+//bottom bar
+drw.pBox(main, 4, 127, 150, 10)
+drw.pBox(main, 6, 125, 146, 5)
+drw.pBox(main, 6, 134, 146, 5)
+
+spt.two(test, 20, 20)
 
 
 
-drawPixel(main, 20, 20, 20, 20, c9)
-drawPixel(main, 23, 20, 16, 20, c8)
-
-
-drawLine(main, 40, 40, 10, 5, c1)
-drawLine(main, 43, 40, 10, 5, c2)
-
-
-
-
-
-spritePalette(main)
