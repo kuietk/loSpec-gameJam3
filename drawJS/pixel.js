@@ -1,4 +1,5 @@
-
+// DRAWS A RESIZABLE BOX/PIXEL 
+//
 export function pBox(ctx, x1, y1, x2, y2, coloR){
     x1 = x1 || 0;
     y1 = y1 || 0;
@@ -19,6 +20,8 @@ export function pBox(ctx, x1, y1, x2, y2, coloR){
 
 }
 
+// REPEATS AN INSTANCE OF pBox DIAGNOLLY
+//
 export function pLine(ctx, x1, y1, z1, rvrs, z2, coloR){
     x1 = x1 || 0
     y1 = y1 || 0
@@ -49,8 +52,8 @@ export function pLine(ctx, x1, y1, z1, rvrs, z2, coloR){
 export function tri(ctx, x1, y1, z1, z2, coloR){
     x1 = x1 || 0;
     y1 = y1 || 0;
-    z1 = z1 || 5;
-    z2 = z2 || 5;
+    z1 = z1 || 10;
+    z2 = z2 || 10;
     coloR = coloR || "blue"
 
     ctx.beginPath();
